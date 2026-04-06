@@ -43,7 +43,8 @@ public class SecurityConfig {
                 "/api/auth/**",
                 "/login/oauth2/**",
                 "/oauth2/**",
-                "/api/couples/invite/accept/**"
+                "/api/couples/invite/accept/**",
+                "/api/files/**"
             ).permitAll()
             .anyRequest().authenticated()
         )

@@ -1,7 +1,4 @@
 spring:
-  profiles:
-    active: local
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -46,3 +43,6 @@ app:
 
 storage:
   bucket: spotwo-photos
+
+weather:
+  api-key: ${WEATHER_API_KEY:}

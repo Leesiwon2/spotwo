@@ -32,7 +32,7 @@ dependencies {
 	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.3'
 
 	// AWS S3
-//	implementation 'io.awspring.cloud:spring-cloud-aws-starter-s3:3.3.0'
+	implementation 'io.awspring.cloud:spring-cloud-aws-starter-s3:3.3.0'
 
 	// MinIO (로컬)
 	implementation 'io.minio:minio:8.5.17'

@@ -19,7 +19,10 @@ public enum ErrorCode {
   INVITE_CODE_EXPIRED(400, "만료된 초대 코드입니다. (48시간 초과)"),
   ALREADY_MATCHED(400, "이미 커플 매칭이 완료되었습니다."),
   CANNOT_MATCH_SELF(400, "자기 자신과 매칭할 수 없습니다."),
-  COUPLE_NOT_FOUND(404, "커플 정보를 찾을 수 없습니다.");
+  COUPLE_NOT_FOUND(404, "커플 정보를 찾을 수 없습니다."),
+
+  RECORD_NOT_FOUND(404, "기록을 찾을 수 없습니다."),
+  FORBIDDEN(403, "권한이 없습니다.");
 
   private final int status;
   private final String message;
