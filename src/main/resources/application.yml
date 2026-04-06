@@ -37,12 +37,12 @@ spring:
             user-name-attribute: id
 
 jwt:
-  secret: ${JWT_SECRET:spotwo-secret-key-must-be-at-least-32-bytes-long!!}
+  secret: ${JWT_SECRET}
   expiration: 86400000
   refresh-expiration: 604800000
 
 app:
-  base-url: ${BASE_URL:http://localhost:3000}
+  base-url: ${BASE_URL}
 
 storage:
   bucket: spotwo-photos
