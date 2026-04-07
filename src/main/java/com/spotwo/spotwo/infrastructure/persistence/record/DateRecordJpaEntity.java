@@ -41,7 +41,7 @@ public class DateRecordJpaEntity {
 
   @Column(columnDefinition = "TEXT")
   private String content;
-
+  @Column(length = 1000)
   private String thumbnailUrl;
   private LocalDate visitDate;
 

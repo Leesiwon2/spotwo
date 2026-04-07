@@ -9,6 +9,7 @@ import com.spotwo.spotwo.global.jwt.JwtToken;
 import com.spotwo.spotwo.global.jwt.JwtTokenProvider;
 import com.spotwo.spotwo.infrastructure.oauth.CustomOAuth2UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -31,6 +32,9 @@ public class SecurityConfig {
   private final CustomOAuth2UserService oAuth2UserService;
   private final JwtTokenProvider jwtTokenProvider;
   private final UserRepository userRepository;
+
+  @Value("${app.base-url}")  // ← 추가!
+  private String baseUrl;
 
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) {
@@ -68,7 +72,7 @@ public class SecurityConfig {
           .orElseThrow(() -> new CustomException(ErrorCode.USER_NOT_FOUND));
 
       JwtToken token = jwtTokenProvider.generateToken(user);
-      response.sendRedirect("/oauth2/redirect?token=" + token.getAccessToken());
+      response.sendRedirect(baseUrl + "/oauth2/redirect?token=" + token.getAccessToken());
     };
   }
 
