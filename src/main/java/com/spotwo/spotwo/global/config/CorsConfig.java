@@ -15,10 +15,11 @@ public class CorsConfig {
   public CorsFilter corsFilter() {
     CorsConfiguration config = new CorsConfiguration();
     config.setAllowCredentials(true);
-    config.setAllowedOrigins(List.of(
-        "http://localhost:5173",
-        "https://spotwo.com"
-    ));
+    config.addAllowedOrigin("http://localhost:5173");
+    config.addAllowedOrigin("http://localhost:4173");
+    // S3 도메인 추가! ← 추가!
+    config.addAllowedOrigin("http://spotwo-front.s3-website.ap-northeast-2.amazonaws.com");
+
     config.setAllowedHeaders(List.of("*"));
     config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
     config.setExposedHeaders(List.of("Authorization"));
