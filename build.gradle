@@ -15,6 +15,7 @@ java {
 
 repositories {
 	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
 }
 
 dependencies {
@@ -32,10 +33,12 @@ dependencies {
 	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.3'
 
 	// AWS S3
-	implementation 'io.awspring.cloud:spring-cloud-aws-starter-s3:3.3.0'
+//	implementation 'io.awspring.cloud:spring-cloud-aws-starter-s3:3.3.0'
+	implementation 'io.awspring.cloud:spring-cloud-aws-starter-s3:4.0.0-M1'
 
 	// MinIO (로컬)
 	implementation 'io.minio:minio:8.5.17'
+
 
 	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
 	compileOnly 'org.projectlombok:lombok'
