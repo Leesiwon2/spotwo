@@ -19,7 +19,8 @@ public class CorsConfig {
     config.addAllowedOrigin("http://localhost:4173");
     // S3 도메인 추가! ← 추가!
     config.addAllowedOrigin("http://spotwo-front.s3-website.ap-northeast-2.amazonaws.com");
-
+    config.addAllowedOrigin("https://d1s3d42ku4k1os.cloudfront.net");
+    config.addAllowedOrigin("https://d1lzshhga930qd.cloudfront.net");
     config.setAllowedHeaders(List.of("*"));
     config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
     config.setExposedHeaders(List.of("Authorization"));
