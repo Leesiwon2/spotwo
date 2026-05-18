@@ -22,6 +22,13 @@ public class GlobalExceptionHandler {
         .body(ApiResponse.fail(e.getMessage()));
   }
 
+  @ExceptionHandler(IllegalArgumentException.class)
+  public ResponseEntity<ApiResponse<Void>> handleIllegalArgumentException(IllegalArgumentException e) {
+    log.error("IllegalArgumentException: {}", e.getMessage());
+    return ResponseEntity.badRequest()
+        .body(ApiResponse.fail(e.getMessage()));
+  }
+
   @ExceptionHandler(MethodArgumentNotValidException.class)
   public ResponseEntity<ApiResponse<Void>> handleValidException(
       MethodArgumentNotValidException e) {
